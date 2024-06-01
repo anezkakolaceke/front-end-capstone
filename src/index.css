@@ -7,10 +7,6 @@ body{
   background-color: rgb(255, 255, 255);
 }
 
-header{
-  text-align: center;
-}
-
 nav ul{
   list-style: none;
   text-align: center;
@@ -20,9 +16,10 @@ nav ul{
 
 nav li{
   display: inline-block;
-  width: 15%;
+  width: 100px;
   font-size: large;
   color: black;
+  margin: 5px;
 }
 
 nav li a{
@@ -30,30 +27,39 @@ nav li a{
   text-decoration: none;
 }
 
+.initial_logo{
+  width: 250px;
+}
+
+nav img{
+  width: 100%;
+  min-width: 200px;
+}
+
+
+nav li:hover{
+  opacity: 50%;
+}
+
 nav{
   display: flex;
+  flex-wrap: wrap;
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 20%;
-  padding-right: 20%;
-  justify-content: space-between
-}
-
-.initial_logo{
-  flex: 0;
-}
-
-.menu_links{
-  flex: 6;
+  margin-right: 20%;
+  justify-content: center;
+  align-items: center;
 }
 
 header{
+  text-align: center;
   display:flex;
+  flex-wrap: wrap;
   background: 
-    linear-gradient(to bottom, #495E57 90%, transparent 10%),
-    linear-gradient(to bottom,  transparent 90%, white 10%);
+    linear-gradient(to bottom, #495E57 80%, transparent 20%),
+    linear-gradient(to bottom,  transparent 80%, white 20%);
   color: white;
-  justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20%;
@@ -71,19 +77,23 @@ h2{
 
 .intro_text{
   text-align: left;
-  padding-top: 20px;
-  width: 40%;
+  margin-top: 20px;
+  width: 50%;
+  min-width: 200px;
   align-items: left;
 }
 
 .intro_text h2{
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .intro_image{
-  width: 450px;
-  height: 300px;
-  border-radius: 16px;
+  width: 50%;
+}
+
+header img{
+  width: 80%;
+  min-width: 200px;
 }
 
 img{
@@ -102,6 +112,7 @@ button{
   border-radius: 16px;
   font-weight: bold;
   border: none;
+  margin-bottom: 20px;
 }
 
 main{
@@ -112,35 +123,27 @@ main{
 .highlights{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .highlights_title{
+  display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-left: 20%;
   margin-top: 50px;
   margin-right:20%;
+  justify-content: space-between;
 }
 
 .main_title{
-  flex: 1;
   font-size: xx-large;
   display: block;
+  margin-bottom: 20px;
 }
 
 .highlights button{
-  flex:1;
-  margin-left: 50%;
-}
-
-.main_title, .highlights button{
-  float:left;
-}
-
-.testimonials{
-  background-color: #D9D9D9;
-  margin-top:30px;
-  padding-left:20%;
-  padding-right: 20%;
+  width: auto;
 }
 
 main h2{
@@ -150,34 +153,39 @@ main h2{
 
 .about{
   display: flex;
+  flex-wrap: wrap;
   margin-left:20%;
   margin-right: 20%;
   margin-top:30px;
+  margin-bottom: 30px;
 }
 
 .about_text{
   flex:1;
   width: 40%;
+  margin-bottom: 20px;
 }
 
 .about_images{
   flex:1;
-  width: 450px;
-  height: 300px;
+  width: 100%;
   border-radius: 16px;
+  min-width: 230px;
 }
 
 main img{
-  width:400px;
+  width:100%;
 }
 
 footer{
   display: flex;
+  flex-wrap: wrap;
   background-color: #D9D9D9;
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 30px;
   padding-bottom: 30px;
+  justify-content: space-between;
 }
 
 footer h1{
@@ -191,12 +199,14 @@ footer h1{
 }
 
 footer img{
-  width: 300px;
+  width: 230px;
+  margin-bottom: 20px;
 }
 
 .doormat{
   flex: 1;
   color: black;
+  margin-bottom: 20px;
 }
 
 footer a{
@@ -206,6 +216,7 @@ footer a{
 
 .contact{
   flex: 1;
+  margin-bottom: 20px;
 }
 
 footer ul{
@@ -214,10 +225,13 @@ footer ul{
 
 .menu_items{
   display: flex;
+  flex-wrap: wrap;
+
   margin-top: 30px;
   margin-left: 20%;
   margin-right: 20%;
   align-items: center;
+  justify-content: space-between;
 }
 
 .menu_items img{
@@ -238,10 +252,11 @@ footer ul{
 .item{
   background-color: #D9D9D9 ;
   width: 29%;
-  margin: 1%;
+  min-width: 230px;
   border-radius: 16px;
   padding-bottom: 10px;
   height: 350px;
+  margin-bottom: 20px;
 }
 
 .menu_icon{
@@ -253,16 +268,22 @@ footer ul{
 }
 
 .testimonials{
+  background-color: #D9D9D9;
+  margin-top:30px;
+  padding-left:20%;
+  padding-right: 20%;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   padding-bottom: 30px;
   padding-top:20px;
 }
 
 .testimonial_items{
   display: flex;
-  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .test{
@@ -275,13 +296,14 @@ footer ul{
     'comment comment comment comment comment comment';
     background-color: white;
     margin-top: 10px;
-    width: 20.5%;
+    width: 20%;
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 16px;
     padding: 10px;
     align-items: center;
     height: 150px;
+    min-width: 200px;
 }
 
 .test_rating{
