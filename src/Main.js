@@ -7,7 +7,7 @@ import { BookingContext, BookingDispatchContext } from './BookingContext'
 
 function Main(){
 
-    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
+    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 
     return (
         <BookingContext.Provider value={availableTimes}>
@@ -21,13 +21,13 @@ function Main(){
     )
 }
 
-function updateTimes(availableTimes, action){
+export function updateTimes(availableTimes, action){
     switch (action.type){
         case "change_date": {
             if (action.date === "2024-06-13")
-                return initializeTimes;
+                return ["17:00", "19:00", "20:00", "21:00", "22:00"];
             else
-                return initializeTimes;
+                return initializeTimes();
         }
         default: {
             return availableTimes;
@@ -35,6 +35,8 @@ function updateTimes(availableTimes, action){
     }
 }
 
-const initializeTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+export function initializeTimes(){
+    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+}
 
 export default Main;

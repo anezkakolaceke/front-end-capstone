@@ -1,27 +1,32 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { BookingContext, BookingDispatchContext } from "./BookingContext";
 
 function BookingForm(props){
+    const availableTimes = useContext(BookingContext);
+    const dispatch = useContext(BookingDispatchContext);
+
     const [date, setDate] = useState();
     const [time, setTime] = useState("17:00");
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState("Other");
 
-    const listTimes =props.availableTimes.map((item)=>
-        <option>{item}</option>
+    const listTimes =availableTimes.map((item)=>
+        <option data-testid="select-option">{item}</option>
     )
 
     const handleSubmit = (e) => {e.preventDefault()};
 
     function handleDateChange(e){
-        setDate(e.target.value)
-        props.dispatch({
+        dispatch({
             type: "change_date",
-            new_date: e.target.value
+            date: e.target.value
         })
+        setDate(e.target.value)
     }
 
     return(
         <>
+            <p>Book your table!</p>
             <form>
                 <label for="res-date">Choose date: </label>
                 <input 
@@ -52,7 +57,6 @@ function BookingForm(props){
                 </select>
                 <input type="submit" value="Make your reservation!" handleSubmit={handleSubmit}/>
             </form>
-            {date}
         </>
     )
 }
