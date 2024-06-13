@@ -10,11 +10,22 @@ function BookingForm(props){
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState("Other");
 
+    const [formData, setFormData] = useState();
+
     const listTimes =availableTimes.map((item)=>
         <option data-testid="select-option">{item}</option>
     )
 
-    const handleSubmit = (e) => {e.preventDefault()};
+    function handleSubmit(e){
+        e.preventDefault();
+        setFormData({
+            date: date,
+            time: time,
+            numberGuests: guests,
+            occasion: occasion
+        });
+        props.submitFunction(formData);
+    }
 
     function handleDateChange(e){
         dispatch({
@@ -27,12 +38,12 @@ function BookingForm(props){
     return(
         <>
             <p>Book your table!</p>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label for="res-date">Choose date: </label>
-                <input 
-                    type="date" 
-                    id="res-date" 
-                    value={date} 
+                <input
+                    type="date"
+                    id="res-date"
+                    value={date}
                     onChange={handleDateChange}
                 />
                 <label for="res-time">Choose time: </label>
@@ -40,12 +51,12 @@ function BookingForm(props){
                     {listTimes}
                 </select>
                 <label for="guests">Number of guests: </label>
-                <input 
-                    type="number" 
-                    placeholder="1" 
-                    min="1" 
-                    max="10" 
-                    id="guests" 
+                <input
+                    type="number"
+                    placeholder="1"
+                    min="1"
+                    max="10"
+                    id="guests"
                     value={guests}
                     onChange={(e) => setGuests(e.target.value)}
                 />
@@ -55,7 +66,7 @@ function BookingForm(props){
                     <option>Anniversary</option>
                     <option>Other</option>
                 </select>
-                <input type="submit" value="Make your reservation!" handleSubmit={handleSubmit}/>
+                <input type="submit" value="Make your reservation!"/>
             </form>
         </>
     )
