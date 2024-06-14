@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 function Nav(){
     return (
         <nav>
-            <div class="initial_logo">
+            <figure class="initial_logo">
                 <img src={logo} alt="logo" />
-            </div>
+            </figure>
             
-            <div class="menu_links">
+            <section class="menu_links">
                 <ul>
                     <li>
                         <Link to="/">Home</Link>
@@ -29,7 +29,7 @@ function Nav(){
                         <Link to="/login">Login</Link>
                     </li>
                 </ul>
-            </div>
+            </section>
             
         </nav>
     )

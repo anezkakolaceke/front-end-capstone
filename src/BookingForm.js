@@ -5,6 +5,9 @@ function BookingForm(props){
     const availableTimes = useContext(BookingContext);
     const dispatch = useContext(BookingDispatchContext);
 
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
     const [date, setDate] = useState();
     const [time, setTime] = useState("17:00");
     const [guests, setGuests] = useState(1);
@@ -39,18 +42,44 @@ function BookingForm(props){
         <>
             <p>Book your table!</p>
             <form onSubmit={handleSubmit}>
-                <label for="res-date">Choose date: </label>
+                <label htmlFor="res-name">Name</label>
+                <input
+                    type="field"
+                    id="res-name"
+                    name="res-name"
+                    value={name}
+                    onChange = {(e) => setName(e.target.value)}
+                    required
+                />
+                <label htmlFor="res-email">Email</label>
+                <input
+                    type="email"
+                    id="res-email"
+                    value={email}
+                    onChange = {(e) => setEmail(e.target.value)}
+                    required
+                />
+                <label htmlFor="res-phone">Phone number</label>
+                <input
+                    type="field"
+                    id="res-phone"
+                    value={phone}
+                    onChange = {(e) => setPhone(e.target.value)}
+                    required
+                />
+                <label htmlFor="res-date">Date</label>
                 <input
                     type="date"
                     id="res-date"
                     value={date}
                     onChange={handleDateChange}
+                    required
                 />
-                <label for="res-time">Choose time: </label>
+                <label htmlFor="res-time">Choose time: </label>
                 <select id="res-time" value={time} onChange={(e) => setTime(e.target.value)}>
                     {listTimes}
                 </select>
-                <label for="guests">Number of guests: </label>
+                <label htmlFor="guests">Number of guests: </label>
                 <input
                     type="number"
                     placeholder="1"
@@ -60,14 +89,21 @@ function BookingForm(props){
                     value={guests}
                     onChange={(e) => setGuests(e.target.value)}
                 />
-                <label for="occasion">Occassion: </label>
+                <label htmlFor="occasion">Occassion: </label>
                 <select id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
                     <option>Birthday</option>
                     <option>Anniversary</option>
                     <option>Other</option>
                 </select>
-                <input type="submit" value="Make your reservation!"/>
+                <input
+                    id="res-button"
+                    aria-label="On Click"
+                    type="submit"
+                    value="Make your reservation!"
+                    disabled={!name || !email || !phone || !date}
+                />
             </form>
+            
         </>
     )
 }

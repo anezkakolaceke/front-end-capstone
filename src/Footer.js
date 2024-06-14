@@ -3,11 +3,11 @@ import logo from './Logo.svg'
 function Footer(){
     return (
         <footer>
-            <div class="logo_footer">
+            <figure class="logo_footer">
                 <img src={logo} alt="logo" />
-            </div>
+            </figure>
 
-            <div class="doormat">
+            <article class="doormat">
                 <h1>Doormat Navigation</h1>
                 <ul>
                     <li>
@@ -29,14 +29,14 @@ function Footer(){
                         <a href="login.html">Login</a>
                     </li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="contact">
+            <article class="contact">
                 <h1>Contact</h1>
                 Main st. 4, Lisbon <br />
                 +351 333 958 367 <br />
                 <a href="mailto:littlelemon@littlelemon.com">littlelemon@littlelemon.com</a>
-            </div>
+            </article>
         </footer>
     )
 }
