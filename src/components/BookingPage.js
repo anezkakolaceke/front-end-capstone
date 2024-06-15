@@ -1,6 +1,6 @@
 import React from "react";
 import BookingForm from "./BookingForm";
-import { submitAPI } from "./API";
+import { submitAPI } from "../API/API";
 import { useNavigate } from "react-router-dom";
 
 

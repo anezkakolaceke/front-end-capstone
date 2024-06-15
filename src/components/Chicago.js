@@ -1,4 +1,4 @@
-import photo1 from './Mario and Adrian A.jpg'
+import photo1 from '../assets/Mario and Adrian A.jpg'
 
 function Chicago() {
     return (

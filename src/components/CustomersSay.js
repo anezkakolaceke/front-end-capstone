@@ -1,5 +1,5 @@
-import photo from './photo.png'
-import star from './star.png'
+import photo from '../assets/photo.png'
+import star from '../assets/star.png'
 
 function CustomersSay() {
     return (

@@ -115,6 +115,15 @@ button{
   margin-bottom: 20px;
 }
 
+button:hover{
+  background-color: black;
+  color: #F4CE14;
+}
+
+button:active{
+  background-color: white;
+}
+
 main{
   display: flex;
   flex-direction: column;
@@ -350,10 +359,61 @@ footer ul{
   width: 25px;
 }
 
-form {
-  display: grid; 
-  max-width:200px; 
-  gap:20px;
-  padding-left: 20%;
+.form{
+  padding-bottom: 30px;
+  margin: auto;
+}
+
+.form_fields{
+  place-self: center;
+  display: grid;
+  grid-template-columns: 100%;
+  width: 100%;
+  max-width: 400px;
   padding-bottom: 20px;
+  align-items: center;
+}
+
+.form_button{
+  display: grid;
+  grid-template-columns: 100%;
+  width: 100%;
+  max-width: 200px;
+  place-items: center;
+}
+
+form label{
+  border-bottom: 20px;
+}
+
+input{
+  margin-bottom: 10px;
+}
+
+select{
+  margin-bottom: 10px;
+}
+
+#res-button{
+  padding: 10px;
+  padding-left: 20px;
+  padding-right:20px;
+  background-color:#F4CE14;
+  border-radius: 16px;
+  font-weight: bold;
+  border: none;
+  margin-bottom: 20px;
+}
+
+#res-button:hover:enabled{
+  background-color: black;
+  color: #F4CE14;
+}
+
+#res-button:active:enabled{
+  background-color: white;
+}
+
+.confirm_text{
+  margin-bottom: 30px;;
 }

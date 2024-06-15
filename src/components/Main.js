@@ -1,10 +1,10 @@
-import Homepage from './Homepage'
-import BookingPage from './BookingPage'
+import Homepage from './Homepage.js'
+import BookingPage from './BookingPage.js'
 import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import React, {useReducer} from 'react'
-import { BookingContext, BookingDispatchContext } from './BookingContext'
-import {fetchAPI} from './API.js'
+import { BookingContext, BookingDispatchContext } from './BookingContext.js'
+import {fetchAPI} from '../API/API.js'
 import ConfirmedBooking from './ConfirmedBooking.js'
 
 function Main(){
